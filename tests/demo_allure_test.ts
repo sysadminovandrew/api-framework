@@ -3,10 +3,14 @@ import CoreApi from '../src/http/CoreApi';
 import { allure } from 'allure-mocha/runtime';
 import Steps from '../src/steps/Steps';
 
+const name = 'Халифарт';
+const id = 2256880;
+
 describe('Проверка имени кота', async () => {
+
   it('allure', async () => {
-    const name = 'Вики';
-    const id = 101368;
+    //const name = 'Вики';
+    //const id = 101368;
 
     const response = await CoreApi.getCatById(id);
     allure.logStep(`выполнен запрос GET /get-by-id c параметром ${id}`);
@@ -20,8 +24,8 @@ describe('Проверка имени кота', async () => {
   });
 
   it('allure2', async () => {
-    const name = 'Вики';
-    const id = 101368;
+    //const name = 'Вики';
+    //const id = 101368;
 
     const response = await allure.step(
       `выполнен запрос GET /get-by-id c параметром ${id}`,
@@ -56,8 +60,8 @@ describe('Проверка имени кота', async () => {
     allure.severity('BLOCKER');
     allure.writeEnvironmentInfo({ lib: 'axios', v: '0.21.1' });
 
-    const name = 'Вики';
-    const id = 101368;
+    //const name = 'Вики';
+    //const id = 101368;
 
     const response = await Steps.common.stepGetCatById(id);
 
